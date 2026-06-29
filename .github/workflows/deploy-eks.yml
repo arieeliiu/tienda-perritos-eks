@@ -81,7 +81,7 @@ jobs:
       # ---------- Aplicar manifests base ----------
       - name: Aplicar manifests base (namespace, DB, servicios)
         env:
-          EKS_NAMESPACE: ${{ secrets.EKS_NAMESPACE }}
+          EKS_NAMESPACE: tienda
         run: |
           kubectl apply -f k8s/namespace.yaml
           kubectl apply -f k8s/mysql-secret.yaml -n $EKS_NAMESPACE
